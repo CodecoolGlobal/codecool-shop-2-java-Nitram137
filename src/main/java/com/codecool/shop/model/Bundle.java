@@ -22,7 +22,7 @@ public class Bundle extends BaseModel {
         defaultPrice = defaultPrice.multiply(BigDecimal.valueOf(0.9));
     }
 
-    public List<Product> getProducts() {
+    public List<Product> getAllProducts() {
         return products;
     }
 
