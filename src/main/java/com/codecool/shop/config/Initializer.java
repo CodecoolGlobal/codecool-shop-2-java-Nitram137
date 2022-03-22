@@ -60,7 +60,7 @@ public class Initializer implements ServletContextListener {
 
         //setting up products and printing it
         productDataStore.add(new Product("League of Warcrimes", new BigDecimal("0.999"), "USD", "Our greatly anticipated hit title. In development since times unknown. Releasing in a similar timeframe.", games, lowie));
-        productDataStore.add(new Product("League of Warcrimes: Elder Ringing", new BigDecimal("0.333"), "USD", "The first DLC that will come out eventually", games, lowie));
+        productDataStore.add(new Product("League of Warcrimes: Elder Ringing", new BigDecimal("0.333"), "USD", "The first DLC that will come out eventually. Picture a bunch of old people ringing a bell. That's a good game design.", games, lowie));
         productDataStore.add(new Product("League of Warcrimes: Ending Strike Tales", new BigDecimal("0.666"), "USD", "Our final masterpiece! It probably won't release in your lifetime though. If it releases at all before the end of the world.", games, lowie));
 
         productDataStore.add(new Product("Cool Stick That I Found", new BigDecimal("0.001"), "USD", "Found this cool stick as a 23 year old.", items, coolSticks));
@@ -86,6 +86,13 @@ public class Initializer implements ServletContextListener {
         productDataStore.add(new Product("The Beta Tester", new BigDecimal("0.25"), "USD", "Show that you were there before the beginning.", titles, titleTech));
         productDataStore.add(new Product("Buyer of False Goods", new BigDecimal("0.01"), "USD", "This one already knows.", titles, titleTech));
         productDataStore.add(new Product("Proud Warlord", new BigDecimal("0.21"), "USD", "It feels good to be bad and you're tired of pretending it doesn't.", titles, titleTech));
+
+        productDataStore.add(new Product("Infinite Well-being", new BigDecimal("0.8"), "USD", "You will feel content with yourself and the world around you.", buffs, buffBros));
+        productDataStore.add(new Product("Ketamine addiction", new BigDecimal("0.4"), "USD", "Makes you feel good, but Allah won't be satisfied with you.", buffs, buffBros));
+        productDataStore.add(new Product("Neck beard", new BigDecimal("0.420"), "USD", "You will suddenly feel the urge to become a moderator on discord, also makes you irresistible to women.", buffs, buffBros));
+        productDataStore.add(new Product("Elongated Musk", new BigDecimal("0.12"), "USD", "Makes your musk elongated. Just don't start sending Teslas to space.", buffs, buffBros));
+        productDataStore.add(new Product("Maidenlessness", new BigDecimal("0.22"), "USD", "Make of thyselves that which ye desire. Be it a Lord. Be it a God. But should ye fail to become aught at all, ye will be forsaken. Amounting only to sacrifices.", buffs, buffBros));
+        productDataStore.add(new Product("Tourette-syndrome", new BigDecimal("0.050"), "USD", "Makes you privileged to swear all you want.", buffs, buffBros));
 
 
     }
