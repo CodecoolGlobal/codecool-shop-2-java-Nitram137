@@ -1,6 +1,6 @@
 export let dataHandler = {
     getProductsByCategory: async function (categoryId) {
-        return await apiGet(`/api/filter?category=${pageNumber}`);
+        return await apiGet(`/api/filter?category=${categoryId}`);
     }
 }
 
