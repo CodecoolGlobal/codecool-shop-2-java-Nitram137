@@ -74,13 +74,18 @@ public class Initializer implements ServletContextListener {
         productDataStore.add(new Product("Bald Cap", new BigDecimal("0.01"), "USD", "100% guarantee to stop hair loss permanently!", items, funnyHats));
         productDataStore.add(new Product("Thunderfury, Blessed Blade of the Windseeker", new BigDecimal("0.142"), "USD", "Ragnaros the Firelord, and his lieutenants Garr and Baron Geddon, defeated Thunderaan, Prince of Air, after the First Age of Creation, during the Elemental Sundering. Ragnaros was unable to fully consume Thunderaan’s essence, so he forced what little remained into a talisman of elemental binding and shattered it. He gave the two halves to his lieutenants. Ages passed, and somehow the talisman halves found their way into the hands of Highlord Demitrian, a follower of Thunderaan. He recombined the talisman but was unable to release his master. Instead, he did the best he could: He crafted a blade to serve as a vessel for his master's essence.", items, hacksmith));
 
-
         productDataStore.add(new Product("2001 Honda Civic", new BigDecimal("0.201"), "USD", "Vehicular manslaughter is a capital offense.", mounts, epicRides));
         productDataStore.add(new Product("Bimbus 2002", new BigDecimal("0.105"), "USD", "Ordinary broom, you can pretend to be able to fly with it.", mounts, coolSticks));
         productDataStore.add(new Product("Rotációs Kapa", new BigDecimal("0.295"), "USD", "Woe to all those wretched souls that gets caught in the ruthless blades of this beast.", mounts, epicRides));
         productDataStore.add(new Product("Rivendare's Deathcharger", new BigDecimal("0.405"), "USD", "That damned horse doesn't want to drop for me in Stratholme.", mounts, epicRides));
         productDataStore.add(new Product("Jukker", new BigDecimal("0.264"), "USD", "Hope in kid, there's no time to explain.", mounts, epicRides));
         productDataStore.add(new Product("Flying Traffic Rug", new BigDecimal("0.311"), "USD", "The streets that raised us, raise us.", mounts, epicRides));
+
+        productDataStore.add(new Product("I am rich!", new BigDecimal("1"), "USD", "No better way to express your wealth, than paying thousands of dollars for this stupid title.", titles, titleTech));
+        productDataStore.add(new Product("Slayer of Enemies", new BigDecimal("0.1"), "USD", "Every video game title ever.", titles, titleTech));
+        productDataStore.add(new Product("The Beta Tester", new BigDecimal("0.25"), "USD", "Show that you were there before the beginning.", titles, titleTech));
+        productDataStore.add(new Product("Buyer of False Goods", new BigDecimal("0.01"), "USD", "This one already knows.", titles, titleTech));
+        productDataStore.add(new Product("Proud Warlord", new BigDecimal("0.21"), "USD", "It feels good to be bad and you're tired of pretending it doesn't.", titles, titleTech));
 
 
     }
