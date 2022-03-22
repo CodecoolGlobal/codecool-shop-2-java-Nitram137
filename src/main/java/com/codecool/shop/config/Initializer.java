@@ -99,11 +99,11 @@ public class Initializer implements ServletContextListener {
         productDataStore.add(new Product("Tourette-syndrome", new BigDecimal("0.050"), "BTC", "Makes you privileged to swear all you want.", buffs, buffBros));
 
         //setting up new bundles
-        Bundle yoda = new Bundle("Master Yoda Kit", "Everything you need to become a true jedi.", productDataStore.getAll().get(7), productDataStore.getAll().get(14), productDataStore.getAll().get(26));
+        Bundle yoda = new Bundle("Master Yoda Kit", "Everything you need to become a true jedi.", productDataStore.getAll().get(6), productDataStore.getAll().get(13), productDataStore.getAll().get(25));
         bundleDataStore.add(yoda);
-        Bundle discordMod = new Bundle("Discord Moderator Set", "Makes you irresistible to any human being.", productDataStore.getAll().get(10), productDataStore.getAll().get(27));
+        Bundle discordMod = new Bundle("Discord Moderator Set", "Makes you irresistible to any human being.", productDataStore.getAll().get(9), productDataStore.getAll().get(26));
         bundleDataStore.add(discordMod);
-        Bundle tarnished = new Bundle("Tarnished Package", "Straight from the Lands Beyond.", productDataStore.getAll().get(5), productDataStore.getAll().get(29));
+        Bundle tarnished = new Bundle("Tarnished Package", "Straight from the Lands Beyond.", productDataStore.getAll().get(4), productDataStore.getAll().get(28));
         bundleDataStore.add(tarnished);
     }
 }
