@@ -25,26 +25,36 @@ public class Initializer implements ServletContextListener {
         SupplierDao supplierDataStore = SupplierDaoMem.getInstance();
 
         //setting up a new supplier
-        Supplier amazon = new Supplier("Amazon", "Digital content and services");
-        supplierDataStore.add(amazon);
-        Supplier lenovo = new Supplier("Lenovo", "Computers");
-        supplierDataStore.add(lenovo);
+        Supplier coolSticks = new Supplier("CoolSticks Co.", "World's #1 supplier of sticks.");
+        supplierDataStore.add(coolSticks);
+        Supplier funnyHats = new Supplier("Funny Hat Store", "Hats in all shapes and sizes.");
+        supplierDataStore.add(funnyHats);
+        Supplier epicRides = new Supplier("Epic Rides Inc.", "In occasions when you gotta go fast, boi!");
+        supplierDataStore.add(epicRides);
+        Supplier titleTech = new Supplier("Title Tech Corps.", "Supplying titles with cutting-edge technology.");
+        supplierDataStore.add(titleTech);
+        Supplier buffBros = new Supplier("Buff Bros.", "You need buff, you get buff!");
+        supplierDataStore.add(buffBros);
+        Supplier ammuNation = new Supplier("Ammu-Nation", "Protecting your rights!");
+        supplierDataStore.add(ammuNation);
+        Supplier hacksmith = new Supplier("Hacksmith Industries", "They actually made a lightsaber IRL!");
+        supplierDataStore.add(hacksmith);
+        Supplier pandora = new Supplier("Pandora", "That's the jewellery store.");
+        supplierDataStore.add(pandora);
 
         //setting up a new product category
         ProductCategory games = new ProductCategory("Games", "Software", "The main feature of our web shop.");
-        ProductCategory items = new ProductCategory("Items", "In-game", "All the equippable in-game stuff.");
-        ProductCategory mounts = new ProductCategory("Mounts", "In-game", "The best steads money can buy.");
-        ProductCategory titles = new ProductCategory("Titles", "In-game", "Show your superiority by attaching one of these neat titles to your name.");
-        ProductCategory buffs = new ProductCategory("Buffs", "In-game", "Why waste your time getting gud, when you can just buy a buff instead?");
         productCategoryDataStore.add(games);
+        ProductCategory items = new ProductCategory("Items", "In-game", "All the equippable in-game stuff.");
         productCategoryDataStore.add(items);
+        ProductCategory mounts = new ProductCategory("Mounts", "In-game", "The best steads money can buy.");
         productCategoryDataStore.add(mounts);
+        ProductCategory titles = new ProductCategory("Titles", "In-game", "Show your superiority by attaching one of these neat titles to your name.");
         productCategoryDataStore.add(titles);
+        ProductCategory buffs = new ProductCategory("Buffs", "In-game", "Why waste your time getting gud, when you can just buy a buff instead?");
         productCategoryDataStore.add(buffs);
 
         //setting up products and printing it
-        productDataStore.add(new Product("Amazon Fire", new BigDecimal("49.9"), "USD", "Fantastic price. Large content ecosystem. Good parental controls. Helpful technical support.", tablet, amazon));
-        productDataStore.add(new Product("Lenovo IdeaPad Miix 700", new BigDecimal("479"), "USD", "Keyboard cover is included. Fanless Core m5 processor. Full-size USB ports. Adjustable kickstand.", tablet, lenovo));
-        productDataStore.add(new Product("Amazon Fire HD 8", new BigDecimal("89"), "USD", "Amazon's latest Fire HD 8 tablet is a great value for media consumption.", tablet, amazon));
+        productDataStore.add(new Product("Cool Stick That I Found", new BigDecimal("420"), "USD", "I found it on the ground in the park.", tablet, amazon));
     }
 }
