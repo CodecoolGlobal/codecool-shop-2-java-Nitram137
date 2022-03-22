@@ -1,10 +1,13 @@
 package com.codecool.shop.controller;
 
 import com.codecool.shop.dao.ProductCategoryDao;
+import com.codecool.shop.dao.SupplierDao;
 import com.codecool.shop.dao.implementation.ProductCategoryDaoMem;
+import com.codecool.shop.dao.implementation.SupplierDaoMem;
 import com.codecool.shop.model.Product;
 import com.codecool.shop.model.ProductCategory;
 import com.codecool.shop.model.ProductJSON;
+import com.codecool.shop.model.Supplier;
 import com.google.gson.Gson;
 
 
@@ -28,7 +31,8 @@ public class FilterController extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
 
         ProductCategoryDao productCategoryDataStore = ProductCategoryDaoMem.getInstance();
-        List<Product> products = new ArrayList<>();
+        SupplierDao supplierDao = SupplierDaoMem.getInstance();
+        List<Product> products;
 
         if (request.getParameterMap().containsKey("category")) {
             int categoryId = Integer.parseInt(request.getParameter("category"));
@@ -38,6 +42,16 @@ public class FilterController extends HttpServlet {
             } else {
                 throw new ServletException("Invalid Category Id");
             }
+        } else if (request.getParameterMap().containsKey("supplier")) {
+            int supplierId = Integer.parseInt(request.getParameter("supplier"));
+            Supplier supplier = supplierDao.find(supplierId);
+            if (supplier != null) {
+                products = supplier.getProducts();
+            } else {
+                throw new ServletException("Invalid Supplier Id");
+            }
+        } else {
+            throw new ServletException("Invalid url");
         }
 
         List<ProductJSON> productJSONS = products.stream().map(product -> new ProductJSON(
