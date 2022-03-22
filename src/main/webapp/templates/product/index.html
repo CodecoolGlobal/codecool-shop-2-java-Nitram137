@@ -108,7 +108,7 @@
                 Category
             </button>
             <div class="dropdown-menu" aria-labelledby="category">
-                <button class="dropdown-item filterCategory" type="button" th:each="category, iterStat: ${categories}" th:text="${category.getName()}" th:attr="data-category-id=${category.id}">Items</button>
+                <button class="dropdown-item filterCategory" type="button" th:each="category, iterStat: ${categories}" th:text="${category.getName()}" th:attr="data-category-id=${category.id}"></button>
             </div>
         </div>
 
@@ -117,9 +117,7 @@
                 Suppliers
             </button>
             <div class="dropdown-menu" aria-labelledby="supplier">
-                <button class="dropdown-item" type="button">Cool Stick Company</button>
-                <button class="dropdown-item" type="button">Epic Rides</button>
-                <button class="dropdown-item" type="button">Pandora</button>
+                <button class="dropdown-item filterSupplier" type="button" th:each="supplier, iterStat: ${suppliers}" th:text="${supplier.getName()}" th:attr="data-supplier-id=${supplier.id}"></button>
             </div>
         </div>
 
