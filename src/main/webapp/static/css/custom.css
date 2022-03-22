@@ -33,6 +33,14 @@ body {
     transform: scale(1.1);
 }
 
+.bundle {
+    visibility: collapse;
+}
+
+.bundle a, h6, h4, img, h5, p, a {
+    visibility: visible;
+}
+
 h1, h2, h3, h4, h5, h6 {
     text-shadow: 3px 3px black;
 }
