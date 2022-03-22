@@ -139,7 +139,55 @@
             </div>
         </div>
 
-</div>
+    <div class="d-flex flex-row flex-wrap mr-5 ml-5 pl-5 pr-5 mt-5 mb-2">
+        <h1 class="text-light ml-auto mr-auto">Bundles</h1>
+    </div>
+
+    <div id="bundleCarousel" class="carousel slide pt-1 mr-5 ml-5 pr-5 pl-5 pb-5" data-ride="bundle">
+        <div class="carousel-inner">
+            <div th:each="bundle, iterStat : ${bundles}" th:attr="class=${iterStat.index == 1} ? 'carousel-item active' : 'carousel-item'">
+
+                <div class="card bundle mr-5 ml-5 pr-5 pl-5">
+
+                    <div class="card-body">
+
+                        <h4 class="card-title text-light pl-5 ml-5" th:text="${bundle.name}"></h4>
+
+                        <div class="d-flex flex-row flex-wrap mr-5 ml-5 pl-5 pr-5">
+
+                            <div class="card p-2 ml-auto mr-auto" style="width: 20rem;" th:each="product, iterStat : ${bundle.getAllProducts()}">
+                                <img class="card-img-top" src="http://placehold.it/400x250/000/fff" th:attr="src='/static/img/product_' + ${product.id} + '.png'" height="200" width="200" alt="Card image cap">
+                                <div class="card-body ml-auto mr-auto">
+                                    <h5 class="card-title text-light" th:text="${product.name}"></h5>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="d-flex flex-row flex-wrap mr-5 ml-5 pl-5 pr-5">
+                            <h5 class="card-text text-light mt-auto mb-auto" th:text="${bundle.description}"></h5>
+                            <h5 class="card-text text-light mt-auto mb-auto ml-1" th:text="'You can get it just for: ' + ${bundle.getPrice()}"></h5>
+                            <a class="btn btn-dark btn-lg text-light mr-0 ml-auto mt-auto mb-auto">Add to Cart</a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <a class="carousel-control-prev hoverAble" href="#bundleCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next hoverAble" href="#bundleCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+
+    </div>
 
 </div>
 
