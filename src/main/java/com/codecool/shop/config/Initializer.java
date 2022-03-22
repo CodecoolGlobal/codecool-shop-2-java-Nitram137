@@ -25,6 +25,8 @@ public class Initializer implements ServletContextListener {
         SupplierDao supplierDataStore = SupplierDaoMem.getInstance();
 
         //setting up a new supplier
+        Supplier lowie = new Supplier("LoW Interactive Entertainment", "We don't actually know what we supposed to do.");
+        supplierDataStore.add(lowie);
         Supplier coolSticks = new Supplier("CoolSticks Co.", "World's #1 supplier of sticks.");
         supplierDataStore.add(coolSticks);
         Supplier funnyHats = new Supplier("Funny Hat Store", "Hats in all shapes and sizes.");
@@ -41,6 +43,8 @@ public class Initializer implements ServletContextListener {
         supplierDataStore.add(hacksmith);
         Supplier pandora = new Supplier("Pandora", "That's the jewellery store.");
         supplierDataStore.add(pandora);
+        Supplier ea = new Supplier("Electronic Arts", "Your money and your life!");
+        supplierDataStore.add(ea);
 
         //setting up a new product category
         ProductCategory games = new ProductCategory("Games", "Software", "The main feature of our web shop.");
@@ -55,6 +59,18 @@ public class Initializer implements ServletContextListener {
         productCategoryDataStore.add(buffs);
 
         //setting up products and printing it
-        productDataStore.add(new Product("Cool Stick That I Found", new BigDecimal("420"), "USD", "I found it on the ground in the park.", tablet, amazon));
+        productDataStore.add(new Product("League of Warcrimes", new BigDecimal("0.999"), "BTC", "Our greatly anticipated hit title. In development since times unknown. Releasing in a similar timeframe.", games, lowie));
+        productDataStore.add(new Product("League of Warcrimes: Elder Ringing", new BigDecimal("0.333"), "BTC", "The first DLC that will come out eventually", games, lowie));
+        productDataStore.add(new Product("League of Warcrimes: Ending Strike Tales", new BigDecimal("0.666"), "BTC", "Our final masterpiece! It probably won't release in your lifetime though. If it releases at all before the end of the world.", games, lowie));
+        productDataStore.add(new Product("Cool Stick That I Found", new BigDecimal("0.001"), "BTC", "Found this cool stick as a 23 year old.", items, coolSticks));
+        productDataStore.add(new Product("Elden Ring", new BigDecimal("0.5"), "BTC", "Foul tarnished, in search of the Elden Ring. Emboldened by the flame of ambition. Someone must extinguish thy flame. - Margit the Fell", items, pandora));
+        productDataStore.add(new Product("EA Controller", new BigDecimal("0.009"), "BTC", "With this you will be able to buy microtransactions in-game... when the game eventually comes out.", items, ea));
+        productDataStore.add(new Product("Lightsaber", new BigDecimal("0.066"), "BTC", "The force be with you.", items, hacksmith));
+        productDataStore.add(new Product("M4A4 Dragon King", new BigDecimal("0.046"), "BTC", "A weapon worthy of the Monkey King himself.", items, ammuNation));
+
+
+
+
+
     }
 }
