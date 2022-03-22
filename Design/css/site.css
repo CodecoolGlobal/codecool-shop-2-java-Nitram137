@@ -1,0 +1,41 @@
+body {
+    font-family: "Montserrat", sans-serif;
+    width: 100%;
+    min-width: 600px;
+    height: 100%;
+}
+
+.content {
+    background-image: url('../background/background.png');
+    min-height: 1600px;
+}
+
+.hoverAble {
+    transition-duration: 0.8s;
+}
+
+.hoverAble:hover {
+    background-color: black;
+}
+
+.filterContainer {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+.product {
+    margin: auto;
+    margin-top: 0;
+    visibility: collapse;
+  }
+  
+.product a, h6, img, h5, p, a {
+    visibility: visible;
+  }
+
+.product:hover {
+    transform: scale(1.1);
+}
