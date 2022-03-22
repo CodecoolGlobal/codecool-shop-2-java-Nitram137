@@ -8,6 +8,8 @@ body {
 .content {
     background-image: url('../img/background/background.png');
     min-height: 1600px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .hoverAble {
