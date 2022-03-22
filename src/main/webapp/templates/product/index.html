@@ -106,9 +106,7 @@
                 Category
             </button>
             <div class="dropdown-menu" aria-labelledby="category">
-                <button class="dropdown-item" type="button">Items</button>
-                <button class="dropdown-item" type="button">Mounts</button>
-                <button class="dropdown-item" type="button">Titles</button>
+                <button class="dropdown-item" type="button" th:each="category, iterStat: ${categories}" th:text="${category.getName()}" th:attr="data-category-id=${category.id}">Items</button>
             </div>
         </div>
 
