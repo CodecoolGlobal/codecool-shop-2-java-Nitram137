@@ -62,6 +62,7 @@ public class Initializer implements ServletContextListener {
         productDataStore.add(new Product("League of Warcrimes", new BigDecimal("0.999"), "USD", "Our greatly anticipated hit title. In development since times unknown. Releasing in a similar timeframe.", games, lowie));
         productDataStore.add(new Product("League of Warcrimes: Elder Ringing", new BigDecimal("0.333"), "USD", "The first DLC that will come out eventually", games, lowie));
         productDataStore.add(new Product("League of Warcrimes: Ending Strike Tales", new BigDecimal("0.666"), "USD", "Our final masterpiece! It probably won't release in your lifetime though. If it releases at all before the end of the world.", games, lowie));
+
         productDataStore.add(new Product("Cool Stick That I Found", new BigDecimal("0.001"), "USD", "Found this cool stick as a 23 year old.", items, coolSticks));
         productDataStore.add(new Product("Elden Ring", new BigDecimal("0.5"), "USD", "Foul tarnished, in search of the Elden Ring. Emboldened by the flame of ambition. Someone must extinguish thy flame. - Margit the Fell", items, pandora));
         productDataStore.add(new Product("EA Controller", new BigDecimal("0.009"), "USD", "With this you will be able to buy microtransactions in-game... when the game eventually comes out.", items, ea));
@@ -71,6 +72,16 @@ public class Initializer implements ServletContextListener {
         productDataStore.add(new Product("Fedora", new BigDecimal("0.042"), "USD", "For all you nice guys and discord mods out there.", items, funnyHats));
         productDataStore.add(new Product("Sombrero", new BigDecimal("0.023"), "USD", "Fashionable moustache not included.", items, funnyHats));
         productDataStore.add(new Product("Bald Cap", new BigDecimal("0.01"), "USD", "100% guarantee to stop hair loss permanently!", items, funnyHats));
+        productDataStore.add(new Product("Thunderfury, Blessed Blade of the Windseeker", new BigDecimal("0.142"), "USD", "Ragnaros the Firelord, and his lieutenants Garr and Baron Geddon, defeated Thunderaan, Prince of Air, after the First Age of Creation, during the Elemental Sundering. Ragnaros was unable to fully consume Thunderaan’s essence, so he forced what little remained into a talisman of elemental binding and shattered it. He gave the two halves to his lieutenants. Ages passed, and somehow the talisman halves found their way into the hands of Highlord Demitrian, a follower of Thunderaan. He recombined the talisman but was unable to release his master. Instead, he did the best he could: He crafted a blade to serve as a vessel for his master's essence.", items, hacksmith));
+
+
+        productDataStore.add(new Product("2001 Honda Civic", new BigDecimal("0.201"), "USD", "Vehicular manslaughter is a capital offense.", mounts, epicRides));
+        productDataStore.add(new Product("Bimbus 2002", new BigDecimal("0.105"), "USD", "Ordinary broom, you can pretend to be able to fly with it.", mounts, coolSticks));
+        productDataStore.add(new Product("Rotációs Kapa", new BigDecimal("0.295"), "USD", "Woe to all those wretched souls that gets caught in the ruthless blades of this beast.", mounts, epicRides));
+        productDataStore.add(new Product("Rivendare's Deathcharger", new BigDecimal("0.405"), "USD", "That damned horse doesn't want to drop for me in Stratholme.", mounts, epicRides));
+        productDataStore.add(new Product("Jukker", new BigDecimal("0.264"), "USD", "Hope in kid, there's no time to explain.", mounts, epicRides));
+        productDataStore.add(new Product("Flying Traffic Rug", new BigDecimal("0.311"), "USD", "The streets that raised us, raise us.", mounts, epicRides));
+
 
     }
 }
