@@ -1,11 +1,14 @@
 package com.codecool.shop.config;
 
+import com.codecool.shop.dao.BundleDao;
 import com.codecool.shop.dao.ProductCategoryDao;
 import com.codecool.shop.dao.ProductDao;
 import com.codecool.shop.dao.SupplierDao;
+import com.codecool.shop.dao.implementation.BundleDaoMem;
 import com.codecool.shop.dao.implementation.ProductCategoryDaoMem;
 import com.codecool.shop.dao.implementation.ProductDaoMem;
 import com.codecool.shop.dao.implementation.SupplierDaoMem;
+import com.codecool.shop.model.Bundle;
 import com.codecool.shop.model.Product;
 import com.codecool.shop.model.ProductCategory;
 import com.codecool.shop.model.Supplier;
@@ -23,6 +26,7 @@ public class Initializer implements ServletContextListener {
         ProductDao productDataStore = ProductDaoMem.getInstance();
         ProductCategoryDao productCategoryDataStore = ProductCategoryDaoMem.getInstance();
         SupplierDao supplierDataStore = SupplierDaoMem.getInstance();
+        BundleDao bundleDataStore = BundleDaoMem.getInstance();
 
         //setting up a new supplier
         Supplier lowie = new Supplier("LoW Interactive Entertainment", "We don't actually know what we supposed to do.");
@@ -94,6 +98,12 @@ public class Initializer implements ServletContextListener {
         productDataStore.add(new Product("Maidenlessness", new BigDecimal("0.22"), "BTC", "Make of thyselves that which ye desire. Be it a Lord. Be it a God. But should ye fail to become aught at all, ye will be forsaken. Amounting only to sacrifices.", buffs, buffBros));
         productDataStore.add(new Product("Tourette-syndrome", new BigDecimal("0.050"), "BTC", "Makes you privileged to swear all you want.", buffs, buffBros));
 
-
+        //setting up new bundles
+        Bundle yoda = new Bundle("Master Yoda Kit", "Everything you need to become a true jedi.", productDataStore.getAll().get(6), productDataStore.getAll().get(13), productDataStore.getAll().get(25));
+        bundleDataStore.add(yoda);
+        Bundle discordMod = new Bundle("Discord Moderator Set", "Makes you irresistible to any human being.", productDataStore.getAll().get(9), productDataStore.getAll().get(26));
+        bundleDataStore.add(discordMod);
+        Bundle tarnished = new Bundle("Tarnished Package", "Straight from the Lands Beyond.", productDataStore.getAll().get(4), productDataStore.getAll().get(28));
+        bundleDataStore.add(tarnished);
     }
 }
