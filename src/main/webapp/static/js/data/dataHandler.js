@@ -4,6 +4,9 @@ export let dataHandler = {
     },
     getProductsBySupplier: async function (supplierId) {
         return await apiGet(`/api/filter?supplier=${supplierId}`);
+    },
+    getCart: async function (cart) {
+        return await apiPost('/api/cart', cart);
     }
 }
 
