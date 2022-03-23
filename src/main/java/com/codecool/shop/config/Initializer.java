@@ -63,13 +63,13 @@ public class Initializer implements ServletContextListener {
         productCategoryDataStore.add(buffs);
 
         //setting up products and printing it
-        productDataStore.add(new Product("League of Warcrimes", new BigDecimal("0.999"), "BTC", "Our greatly anticipated hit title. In development since times unknown. Releasing in a similar timeframe.", games, lowie));
+        productDataStore.add(new Product("League of Warcrimes", new BigDecimal("0.999"), "BTC", "Our greatly anticipated hit title. In development since times ancient. Releasing in a day that is may yet to come.", games, lowie));
         productDataStore.add(new Product("League of Warcrimes: Elder Ringing", new BigDecimal("0.333"), "BTC", "The first DLC that will come out eventually. Picture a bunch of old people ringing a bell. That's a good game design.", games, lowie));
         productDataStore.add(new Product("League of Warcrimes: Ending Strike Tales", new BigDecimal("0.666"), "BTC", "Our final masterpiece! It probably won't release in your lifetime though. If it releases at all before the end of the world.", games, lowie));
 
-        productDataStore.add(new Product("Cool Stick That I Found", new BigDecimal("0.001"), "BTC", "Found this cool stick as a 23 year old.", items, coolSticks));
+        productDataStore.add(new Product("Cool Stick That I Found", new BigDecimal("0.001"), "BTC", "Found this cool stick, don't know what to do with it, guess I'll sell it here.", items, coolSticks));
         productDataStore.add(new Product("Elden Ring", new BigDecimal("0.5"), "BTC", "Foul tarnished, in search of the Elden Ring. Emboldened by the flame of ambition. Someone must extinguish thy flame. - Margit the Fell", items, pandora));
-        productDataStore.add(new Product("EA Controller", new BigDecimal("0.009"), "BTC", "With this you will be able to buy microtransactions in-game... when the game eventually comes out.", items, ea));
+        productDataStore.add(new Product("EA Controller", new BigDecimal("0.009"), "BTC", "Buy this to buy microtransactions in-game... when the game eventually comes out.", items, ea));
         productDataStore.add(new Product("Lightsaber", new BigDecimal("0.066"), "BTC", "The force be with you.", items, hacksmith));
         productDataStore.add(new Product("M4A4 Dragon King", new BigDecimal("0.046"), "BTC", "A weapon worthy of the Monkey King himself.", items, ammuNation));
         productDataStore.add(new Product("Wooden Sword", new BigDecimal("0.002"), "BTC", "Every war criminal has to start somewhere.", items, coolSticks));
@@ -95,13 +95,13 @@ public class Initializer implements ServletContextListener {
         productDataStore.add(new Product("Ketamine addiction", new BigDecimal("0.4"), "BTC", "Makes you feel good, but Allah won't be satisfied with you.", buffs, buffBros));
         productDataStore.add(new Product("Neck beard", new BigDecimal("0.420"), "BTC", "You will suddenly feel the urge to become a moderator on discord, also makes you irresistible to women.", buffs, buffBros));
         productDataStore.add(new Product("Elongated Musk", new BigDecimal("0.12"), "BTC", "Makes your musk elongated. Just don't start sending Teslas to space.", buffs, buffBros));
-        productDataStore.add(new Product("Maidenlessness", new BigDecimal("0.22"), "BTC", "Make of thyselves that which ye desire. Be it a Lord. Be it a God. But should ye fail to become aught at all, ye will be forsaken. Amounting only to sacrifices.", buffs, buffBros));
+        productDataStore.add(new Product("Maidenlessness", new BigDecimal("0.22"), "BTC", "Oh, yes... Tarnished are we? Come to the Lands between for the Elden Ring, hmm? Of course you have. No shame in it. Unfortunately for you, however, you are maidenless.", buffs, buffBros));
         productDataStore.add(new Product("Tourette-syndrome", new BigDecimal("0.050"), "BTC", "Makes you privileged to swear all you want.", buffs, buffBros));
 
         //setting up new bundles
         Bundle yoda = new Bundle("Master Yoda Kit", "Everything you need to become a true jedi.", productDataStore.getAll().get(6), productDataStore.getAll().get(13), productDataStore.getAll().get(25));
         bundleDataStore.add(yoda);
-        Bundle discordMod = new Bundle("Discord Moderator Set", "Makes you irresistible to any human being.", productDataStore.getAll().get(9), productDataStore.getAll().get(26));
+        Bundle discordMod = new Bundle("Discord Moderator Set", "This combo makes you irresistible to any human being.", productDataStore.getAll().get(9), productDataStore.getAll().get(26));
         bundleDataStore.add(discordMod);
         Bundle tarnished = new Bundle("Tarnished Package", "Straight from the Lands Beyond.", productDataStore.getAll().get(4), productDataStore.getAll().get(28));
         bundleDataStore.add(tarnished);

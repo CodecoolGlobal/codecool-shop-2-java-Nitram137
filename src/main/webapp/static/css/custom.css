@@ -44,3 +44,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
     text-shadow: 3px 3px black;
 }
+
+img {
+    border: solid black 2px;
+}
