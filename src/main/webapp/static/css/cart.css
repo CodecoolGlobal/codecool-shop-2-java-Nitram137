@@ -88,7 +88,7 @@
 }
 
 .modal img {
-    width: 3.5rem
+    width: 5rem
 }
 
 .modal .back-to-shop {
@@ -134,17 +134,6 @@
     color: transparent
 }
 
-.modal .btn {
-    background-color: #000;
-    border-color: #000;
-    color: white;
-    width: 100%;
-    font-size: 0.7rem;
-    margin-top: 4vh;
-    padding: 1vh;
-    border-radius: 0
-}
-
 .modal .btn:focus {
     box-shadow: none;
     outline: none;
@@ -153,10 +142,6 @@
     -webkit-box-shadow: none;
     -webkit-user-select: none;
     transition: none
-}
-
-.modal .btn:hover {
-    color: white
 }
 
 .modal a {
