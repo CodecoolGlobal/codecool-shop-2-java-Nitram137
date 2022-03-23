@@ -25,5 +25,8 @@ function buildCard(product, template) {
     let description = template.getElementById("productDescription");
     description.textContent = product.description;
 
+    let addToCartButton = template.querySelector(".cart-button");
+    addToCartButton.setAttribute("data-product-id", product.id);
+
     return template;
 }
