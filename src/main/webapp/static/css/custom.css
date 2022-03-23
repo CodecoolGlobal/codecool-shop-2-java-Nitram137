@@ -18,7 +18,8 @@ body {
 
 .product {
     margin: 0 auto auto;
-    visibility: collapse;
+    background-color: transparent;
+    border: none;
 }
 
 .product a, h6, img, h5, p, a {
