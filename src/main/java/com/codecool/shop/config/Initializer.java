@@ -65,7 +65,7 @@ public class Initializer implements ServletContextListener {
         //setting up products and printing it
         productDataStore.add(new Product("League of Warcrimes", new BigDecimal("0.999"), "BTC", "Our greatly anticipated hit title. In development since times ancient. Releasing in a day that is may yet to come.", games, lowie));
         productDataStore.add(new Product("League of Warcrimes: Elder Ringing", new BigDecimal("0.333"), "BTC", "The first DLC that will come out eventually. Picture a bunch of old people ringing a bell. That's a good game design.", games, lowie));
-        productDataStore.add(new Product("League of Warcrimes: Ending Strike Tales", new BigDecimal("0.666"), "BTC", "Our final masterpiece! It probably won't release in your lifetime though. If it releases at all before the end of the world.", games, lowie));
+        productDataStore.add(new Product("League of Warcrimes: Ending Strike Tales", new BigDecimal("0.666"), "BTC", "Our final masterpiece! It probably won't release in our lifetime though. If it releases at all before the end of the world.", games, lowie));
 
         productDataStore.add(new Product("Cool Stick That I Found", new BigDecimal("0.001"), "BTC", "Found this cool stick, don't know what to do with it, guess I'll sell it here.", items, coolSticks));
         productDataStore.add(new Product("Elden Ring", new BigDecimal("0.5"), "BTC", "Foul tarnished, in search of the Elden Ring. Emboldened by the flame of ambition. Someone must extinguish thy flame. - Margit the Fell", items, pandora));

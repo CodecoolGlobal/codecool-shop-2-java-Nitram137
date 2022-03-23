@@ -115,7 +115,7 @@
                 <img class="card-img-top" src="http://placehold.it/400x250/000/fff" th:attr="src='/static/img/product_' + ${prod.id} + '.png'" height="200" width="200" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title text-light" th:text="${prod.name}"></h5>
-                    <h6 class="card-subtitle mb-2 text-muted" th:tex="${prod.getSupplier()}"></h6>
+                    <h6 class="card-subtitle mb-2 text-muted" th:text="${prod.getSupplier()}"></h6>
                     <h6 class="card-subtitle mb-2 text-light" th:text="${prod.getPrice()}"></h6>
                     <p class="card-text text-light" th:text="${prod.description}"></p>
                     <a class="btn btn-dark btn-lg text-light">Add to Cart</a>
@@ -187,9 +187,9 @@
 
     </template>
 
-</div>
+    <div th:replace="footer.html :: copy"></div>
 
-<div th:replace="footer.html :: copy"></div>
+</div>
 
 </body>
 </html>
