@@ -16,10 +16,6 @@ body {
     transition-duration: 0.8s;
 }
 
-.hoverAble:hover {
-    background-color: black;
-}
-
 .product {
     margin: 0 auto auto;
     visibility: collapse;
@@ -47,4 +43,20 @@ h1, h2, h3, h4, h5, h6 {
 
 img {
     border: solid black 2px;
+}
+
+.carousel-caption {
+    left: 3%;
+    text-align: left;
+    right: auto;
+    padding:5px;
+
+}
+
+h1 {
+    font-size: 60px;
+}
+
+h2 {
+    font-size: 40px;
 }
