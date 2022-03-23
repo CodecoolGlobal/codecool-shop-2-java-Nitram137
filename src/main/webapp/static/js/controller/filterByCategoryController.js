@@ -5,6 +5,8 @@ export let filterByCategoryController = {
     filterByCategory: function (categoryId) {
         dataHandler.getProductsByCategory(categoryId).then((response) => {
             cardBuilder.buildCards(response);
+        }).catch((error) => {
+            alert(error);
         });
     }
 }
