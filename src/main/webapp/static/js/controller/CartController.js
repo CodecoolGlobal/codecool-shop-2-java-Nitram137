@@ -29,10 +29,13 @@ export let CartController = {
             CartController.numberOfItems ++;
             refreshCart();
         }
-    },
-    removeProduct: function (productId) {
+    }
+}
 
-    },
+ function removeProduct(clickEvent) {
+    const productId = clickEvent.currentTarget.dataset.productId;
+    CartController.container.delete(productId);
+    refreshCart();
 }
 
 function initAddToCartButtons() {
@@ -73,6 +76,10 @@ function createProductCardInCart(item) {
 
     const price = cardDiv.querySelector(".product-price");
     price.textContent = item.SumPrice + " BTC";
+
+    const deleteButton = cardDiv.querySelector(".close");
+    deleteButton.setAttribute("data-product-id", item.id);
+    deleteButton.addEventListener('click', removeProduct);
 
     CartController.productList.appendChild(cardDiv);
 }
