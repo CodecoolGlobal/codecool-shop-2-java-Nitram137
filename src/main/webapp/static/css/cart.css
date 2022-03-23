@@ -1,9 +1,12 @@
-
-.shopping-cart .title {
+.modal .title {
     margin-bottom: 5vh
 }
 
-.shopping-cart .card {
+.modal .modal-dialog {
+    max-width: 1500px;
+}
+
+.modal .modal-content {
     margin: auto;
     max-width: 950px;
     width: 90%;
@@ -13,12 +16,12 @@
 }
 
 @media(max-width:767px) {
-    .shopping-cart .card {
+    .modal .modal-content {
         margin: 3vh auto
     }
 }
 
-.shopping-cart .cart {
+.modal .cart {
     background-color: #fff;
     padding: 4vh 5vh;
     border-bottom-left-radius: 1rem;
@@ -26,14 +29,14 @@
 }
 
 @media(max-width:767px) {
-    .shopping-cart .cart {
+    .modal .cart {
         padding: 4vh;
         border-bottom-left-radius: unset;
         border-top-right-radius: 1rem
     }
 }
 
-.shopping-cart .summary {
+.modal .summary {
     background-color: #ddd;
     border-top-right-radius: 1rem;
     border-bottom-right-radius: 1rem;
@@ -42,74 +45,74 @@
 }
 
 @media(max-width:767px) {
-    .shopping-cart .summary {
+    .modal .summary {
         border-top-right-radius: unset;
         border-bottom-left-radius: 1rem
     }
 }
 
-.shopping-cart .summary .col-2 {
+.modal .summary .col-2 {
     padding: 0
 }
 
-.shopping-cart .summary .col-10 {
+.modal .summary .col-10 {
     padding: 0
 }
 
-.shopping-cart .row {
+.modal .row {
     margin: 0
 }
 
-.shopping-cart .title b {
+.modal .title b {
     font-size: 1.5rem
 }
 
-.shopping-cart .main {
+.modal .main {
     margin: 0;
     padding: 2vh 0;
     width: 100%
 }
 
-.shopping-cart .col-2,
+.modal .col-2,
 .col {
     padding: 0 1vh
 }
 
-.shopping-cart a {
+.modal a {
     padding: 0 1vh
 }
 
-.shopping-cart .close {
+.modal .close {
     margin-left: auto;
     font-size: 0.7rem
 }
 
-.shopping-cart img {
+.modal img {
     width: 3.5rem
 }
 
-.shopping-cart .back-to-shop {
+.modal .back-to-shop {
     margin-top: 4.5rem
 }
 
-.shopping-cart h4 {
+.modal h4 {
     text-shadow: none;
 }
 
-.shopping-cart h5 {
+.modal h5 {
     text-shadow: none;
     margin-top: 4vh
 }
 
-.shopping-cart hr {
+.modal hr {
     margin-top: 1.25rem
 }
 
-.shopping-cart form {
+.modal form {
     padding: 2vh 0
 }
 
-.shopping-cart select {
+.modal select {
     border: 1px solid rgba(0, 0, 0, 0.137);
     padding: 1.5vh 1vh;
     margin-bottom: 4vh;
@@ -118,7 +121,7 @@
     background-color: rgb(247, 247, 247)
 }
 
-.shopping-cart input {
+.modal input {
     border: 1px solid rgba(0, 0, 0, 0.137);
     padding: 1vh;
     margin-bottom: 4vh;
@@ -127,11 +130,11 @@
     background-color: rgb(247, 247, 247)
 }
 
-.shopping-cart input:focus::-webkit-input-placeholder {
+.modal input:focus::-webkit-input-placeholder {
     color: transparent
 }
 
-.shopping-cart .btn {
+.modal .btn {
     background-color: #000;
     border-color: #000;
     color: white;
@@ -142,7 +145,7 @@
     border-radius: 0
 }
 
-.shopping-cart .btn:focus {
+.modal .btn:focus {
     box-shadow: none;
     outline: none;
     box-shadow: none;
@@ -152,20 +155,20 @@
     transition: none
 }
 
-.shopping-cart .btn:hover {
+.modal .btn:hover {
     color: white
 }
 
-.shopping-cart a {
+.modal a {
     color: black
 }
 
-.shopping-cart a:hover {
+.modal a:hover {
     color: black;
     text-decoration: none
 }
 
-.shopping-cart #code {
+.modal #code {
     background-image: linear-gradient(to left, rgba(255, 255, 255, 0.253), rgba(255, 255, 255, 0.185)), url("https://img.icons8.com/small/16/000000/long-arrow-right.png");
     background-repeat: no-repeat;
     background-position-x: 95%;
