@@ -99,7 +99,7 @@
                         <h6 class="card-subtitle mb-2 text-muted mr-0 ml-auto" th:text="${prod.getSupplier().getName()}"></h6>
                     </div>
                     <p class="card-text text-light" th:text="${prod.description}"></p>
-                    <a class="btn btn-dark btn-lg text-light">Add to Cart</a>
+                    <a class="btn btn-dark btn-lg text-light cart-button" th:attr="data-product-id=${prod.id}">Add to Cart</a>
                 </div>
             </div>
         </div>
@@ -164,7 +164,7 @@
                         <h6 id="productSupplier" class="card-subtitle mb-2 text-muted mr-0 ml-auto"></h6>
                     </div>
                     <p id="productDescription" class="card-text text-light"></p>
-                    <a class="btn btn-dark btn-lg text-light">Add to Cart</a>
+                    <a class="btn btn-dark btn-lg text-light cart-button">Add to Cart</a>
                 </div>
             </div>
 
