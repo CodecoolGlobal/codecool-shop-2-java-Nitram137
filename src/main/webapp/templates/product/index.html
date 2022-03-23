@@ -70,21 +70,21 @@
             <img src="http://placehold.it/400x250/000/fff" th:attr="src='/static/img/product_' + ${products[0].id} + '.png'" height="700" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <h1 th:text="${products[0].name}"></h1>
-                <p>...</p>
+                <h5 th:text="${products[0].description}"></h5>
             </div>
         </div>
         <div class="carousel-item">
             <img src="http://placehold.it/400x250/000/fff" th:attr="src='/static/img/product_' + ${products[1].id} + '.png'" height="700" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <h1 th:text="${products[1].name}"></h1>
-                <p>...</p>
+                <h5 th:text="${products[1].description}"></h5>
             </div>
         </div>
         <div class="carousel-item">
             <img src="http://placehold.it/400x250/000/fff" th:attr="src='/static/img/product_' + ${products[2].id} + '.png'" height="700" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <h1 th:text="${products[2].name}"></h1>
-                <p>...</p>
+                <h5 th:text="${products[2].description}"></h5>
             </div>
         </div>
     </div>
