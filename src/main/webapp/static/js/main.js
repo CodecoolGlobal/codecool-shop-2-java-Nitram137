@@ -1,10 +1,12 @@
 import {filterByCategoryController} from "./controller/filterByCategoryController.js";
 import {filterBySupplierController} from "./controller/filterBySupplierController.js";
 import {CartController} from "./controller/CartController.js";
+import {CheckOutController} from "./controller/CheckOutController.js";
 
 function init() {
     setEventListenersToFilterButtons();
     CartController.initCart();
+    CheckOutController.initCheckOutController();
 }
 
 
