@@ -88,7 +88,8 @@
 }
 
 .modal img {
-    width: 5rem
+    width: 5rem;
+    border: none;
 }
 
 .modal .back-to-shop {
@@ -158,4 +159,16 @@
     background-repeat: no-repeat;
     background-position-x: 95%;
     background-position-y: center
+}
+
+.modal .decrease-quantity, .increase-quantity {
+    cursor: pointer;
+}
+
+.modal .product-name {
+    font-size: 20px;
+}
+
+.modal span {
+    cursor: pointer;
 }
