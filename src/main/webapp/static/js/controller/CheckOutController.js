@@ -26,6 +26,7 @@ export let CheckOutController = {
 
 function validateInputFields() {
     validateEmailInputField();
+    validateFirstNameInputField();
 }
 
 function validateEmailInputField() {
@@ -38,7 +39,11 @@ function validateEmailInputField() {
 }
 
 function validateFirstNameInputField() {
-
+    if (CheckOutController.inputFirstName.value.length < 2) {
+        alert("You have entered a too short name!");
+        return false;
+    }
+    return true;
 }
 
 function validateLastNameInputField() {
