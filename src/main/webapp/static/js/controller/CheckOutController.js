@@ -55,7 +55,7 @@ function validateLastNameInputField() {
 }
 
 function validateAddress1InputField() {
-    if (CheckOutController.inputLastName.value.length < 2) {
+    if (CheckOutController.inputAddress1.value.length < 2) {
         alert("You have entered a too short address!");
         return false;
     }
@@ -63,9 +63,22 @@ function validateAddress1InputField() {
 }
 
 function validateCityInputField() {
-
+    if (CheckOutController.inputCity.value.length < 2) {
+        alert("You have entered an invalid city name!");
+        return false;
+    }
+    return true;
 }
 
 function validateZipCodeInputField() {
-
+    if (CheckOutController.inputZipCode.value.length === 4) {
+        const zipCode = parseInt(CheckOutController.inputZipCode.value);
+        if (!isNaN(zipCode)) {
+            if (zipCode > 1000 && zipCode < 9999) {
+                return true;
+            }
+        }
+    }
+    alert("You have entered an invalid zip code!");
+    return false;
 }
