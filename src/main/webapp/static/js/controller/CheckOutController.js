@@ -40,14 +40,18 @@ function validateEmailInputField() {
 
 function validateFirstNameInputField() {
     if (CheckOutController.inputFirstName.value.length < 2) {
-        alert("You have entered a too short name!");
+        alert("You have entered a too short first name!");
         return false;
     }
     return true;
 }
 
 function validateLastNameInputField() {
-
+    if (CheckOutController.inputLastName.value.length < 2) {
+        alert("You have entered a too short last name!");
+        return false;
+    }
+    return true;
 }
 
 function validateAddress1InputField() {
