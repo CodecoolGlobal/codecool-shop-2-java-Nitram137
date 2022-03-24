@@ -15,6 +15,7 @@ export let CartController = {
         CartController.numberOfItemsTag = document.getElementById("numberOfItems");
         CartController.numberOfItemsTag.textContent = CartController.numberOfItems + " items";
         CartController.totalPriceTag = document.getElementById("totalPrice");
+        CartController.totalPriceTag.textContent = "0.0 BTC";
     },
     updateAddToCartButtons: function() {
         initAddToCartButtons();
@@ -34,8 +35,34 @@ export let CartController = {
 
  function removeProduct(clickEvent) {
     const productId = clickEvent.currentTarget.dataset.productId;
+    CartController.numberOfItems = CartController.numberOfItems - CartController.container.get(productId);
     CartController.container.delete(productId);
     refreshCart();
+}
+
+function increaseProductQuantity(clickEvent) {
+    const productId = clickEvent.currentTarget.dataset.productId;
+    if (CartController.container.has(productId)) {
+        CartController.container.set(productId, CartController.container.get(productId) + 1);
+        CartController.numberOfItems++;
+        refreshCart();
+    }
+}
+
+function decreaseProductQuantity(clickEvent) {
+    const productId = clickEvent.currentTarget.dataset.productId;
+    if (CartController.container.has(productId)) {
+        let newValue = CartController.container.get(productId) - 1;
+        if (newValue === 0) {
+            CartController.numberOfItems--;
+            CartController.container.delete(productId);
+            refreshCart();
+            return;
+        }
+        CartController.container.set(productId, CartController.container.get(productId) - 1);
+        CartController.numberOfItems--;
+        refreshCart();
+    }
 }
 
 function initAddToCartButtons() {
@@ -80,6 +107,14 @@ function createProductCardInCart(item) {
     const deleteButton = cardDiv.querySelector(".close");
     deleteButton.setAttribute("data-product-id", item.id);
     deleteButton.addEventListener('click', removeProduct);
+
+    const increaseButton = cardDiv.querySelector(".increase-quantity");
+    increaseButton.setAttribute("data-product-id", item.id);
+    increaseButton.addEventListener('click', increaseProductQuantity);
+
+    const decreaseButton = cardDiv.querySelector(".decrease-quantity");
+    decreaseButton.setAttribute("data-product-id", item.id);
+    decreaseButton.addEventListener('click', decreaseProductQuantity);
 
     CartController.productList.appendChild(cardDiv);
 }
