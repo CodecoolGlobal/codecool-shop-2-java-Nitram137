@@ -55,7 +55,11 @@ function validateLastNameInputField() {
 }
 
 function validateAddress1InputField() {
-
+    if (CheckOutController.inputLastName.value.length < 2) {
+        alert("You have entered a too short address!");
+        return false;
+    }
+    return true;
 }
 
 function validateCityInputField() {
