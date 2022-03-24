@@ -45,7 +45,7 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
-            <div th:each="product, iterStat : ${products}" th:if="${product.getProductCategory().getName() == 'Games'}" th:attr="class=${iterStat.index == 1} ? 'carousel-item active' : 'carousel-item'">
+            <div th:each="product, iterStat : ${products}" th:if="${product.getProductCategory().getName() == 'Games'}" th:attr="class=${iterStat.index == 0} ? 'carousel-item active' : 'carousel-item'">
                 <img src="http://placehold.it/400x250/000/fff" th:attr="src='/static/img/product_' + ${product.id} + '.png'" height="700" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h1 th:text="${product.name}"></h1>
