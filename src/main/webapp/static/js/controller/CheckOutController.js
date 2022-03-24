@@ -29,7 +29,12 @@ function validateInputFields() {
 }
 
 function validateEmailInputField() {
-
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(CheckOutController.inputEmail.value))
+    {
+        return true;
+    }
+    alert("You have entered an invalid email address!");
+    return false;
 }
 
 function validateFirstNameInputField() {
