@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<div th:fragment="copy">
+    <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="row">
+            <div class="col-8 cart">
+                <div class="title">
+                    <div class="row">
+                        <div class="col">
+                            <h4><b>Shopping Cart</b></h4>
+                        </div>
+                        <div id="numberOfItems" class="col align-self-center text-right text-muted"></div>
+                    </div>
+                </div>
+                <div id="productList">
+
+
+
+                </div>
+                <div class="back-to-shop"><button type="button" class="btn btn-dark text-light" data-target="#cartModal" data-dismiss="modal">Close</button></div>
+                </div>
+            <div class="col-4 summary">
+                <div>
+                    <h5><b>Summary</b></h5>
+                </div>
+                <hr>
+                <form>
+                    <p>SHIPPING</p> <select>
+                    <option class="text-muted">Standard-Delivery- &euro;5.00</option>
+                </select>
+                    <p>GIVE CODE</p> <input id="code" placeholder="Enter your code">
+                </form>
+                <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+                    <div class="col">TOTAL PRICE</div>
+                    <div class="col text-right" id="totalPrice"></div>
+                </div> <button class="btn btn-primary">CHECKOUT</button>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+    <template id="cartItem">
+
+        <div class="row border-bottom">
+            <div class="row main align-items-center">
+                <div class="col-4"><img class="img-fluid product-image" src="http://placehold.it/400x250/000/fff"></div>
+                <div class="col">
+                    <div class="row text-muted product-name"></div>
+                    <div class="row product-supplier"></div>
+                </div>
+                <div class="col"> <a class="decrease-quantity">-</a><a class="border product-quantity">1</a><a class="increase-quantity">+</a></div>
+                <div class="col product-price"></div><span class="close">&#10005;</span>
+            </div>
+        </div>
+
+    </template>
+    </div>
+
+</div>
+
+</body>
+</html>

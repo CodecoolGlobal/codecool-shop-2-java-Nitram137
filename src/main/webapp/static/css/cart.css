@@ -1,0 +1,161 @@
+.modal .title {
+    margin-bottom: 5vh
+}
+
+.modal .modal-dialog {
+    max-width: 1500px;
+}
+
+.modal .modal-content {
+    margin: auto;
+    max-width: 950px;
+    width: 90%;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 1rem;
+    border: transparent
+}
+
+@media(max-width:767px) {
+    .modal .modal-content {
+        margin: 3vh auto
+    }
+}
+
+.modal .cart {
+    background-color: #fff;
+    padding: 4vh 5vh;
+    border-bottom-left-radius: 1rem;
+    border-top-left-radius: 1rem
+}
+
+@media(max-width:767px) {
+    .modal .cart {
+        padding: 4vh;
+        border-bottom-left-radius: unset;
+        border-top-right-radius: 1rem
+    }
+}
+
+.modal .summary {
+    background-color: #ddd;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    padding: 4vh;
+    color: rgb(65, 65, 65)
+}
+
+@media(max-width:767px) {
+    .modal .summary {
+        border-top-right-radius: unset;
+        border-bottom-left-radius: 1rem
+    }
+}
+
+.modal .summary .col-2 {
+    padding: 0
+}
+
+.modal .summary .col-10 {
+    padding: 0
+}
+
+.modal .row {
+    margin: 0
+}
+
+.modal .title b {
+    font-size: 1.5rem
+}
+
+.modal .main {
+    margin: 0;
+    padding: 2vh 0;
+    width: 100%
+}
+
+.modal .col-2,
+.col {
+    padding: 0 1vh
+}
+
+.modal a {
+    padding: 0 1vh
+}
+
+.modal .close {
+    margin-left: auto;
+    font-size: 0.7rem
+}
+
+.modal img {
+    width: 5rem
+}
+
+.modal .back-to-shop {
+    margin-top: 4.5rem
+}
+
+.modal h4 {
+    text-shadow: none;
+}
+
+.modal h5 {
+    text-shadow: none;
+    margin-top: 4vh
+}
+
+.modal hr {
+    margin-top: 1.25rem
+}
+
+.modal form {
+    padding: 2vh 0
+}
+
+.modal select {
+    border: 1px solid rgba(0, 0, 0, 0.137);
+    padding: 1.5vh 1vh;
+    margin-bottom: 4vh;
+    outline: none;
+    width: 100%;
+    background-color: rgb(247, 247, 247)
+}
+
+.modal input {
+    border: 1px solid rgba(0, 0, 0, 0.137);
+    padding: 1vh;
+    margin-bottom: 4vh;
+    outline: none;
+    width: 100%;
+    background-color: rgb(247, 247, 247)
+}
+
+.modal input:focus::-webkit-input-placeholder {
+    color: transparent
+}
+
+.modal .btn:focus {
+    box-shadow: none;
+    outline: none;
+    box-shadow: none;
+    color: white;
+    -webkit-box-shadow: none;
+    -webkit-user-select: none;
+    transition: none
+}
+
+.modal a {
+    color: black
+}
+
+.modal a:hover {
+    color: black;
+    text-decoration: none
+}
+
+.modal #code {
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.253), rgba(255, 255, 255, 0.185)), url("https://img.icons8.com/small/16/000000/long-arrow-right.png");
+    background-repeat: no-repeat;
+    background-position-x: 95%;
+    background-position-y: center
+}

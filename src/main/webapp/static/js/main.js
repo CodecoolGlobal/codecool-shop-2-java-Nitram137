@@ -1,8 +1,10 @@
 import {filterByCategoryController} from "./controller/filterByCategoryController.js";
 import {filterBySupplierController} from "./controller/filterBySupplierController.js";
+import {CartController} from "./controller/CartController.js";
 
 function init() {
     setEventListenersToFilterButtons();
+    CartController.initCart();
 }
 
 
