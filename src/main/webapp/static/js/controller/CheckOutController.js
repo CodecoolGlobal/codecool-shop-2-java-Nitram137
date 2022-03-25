@@ -1,3 +1,4 @@
+import {Customer} from '../model/Customer.js'
 
 export let CheckOutController = {
     inputEmail: null,
@@ -8,6 +9,7 @@ export let CheckOutController = {
     inputCity: null,
     inputZipCode: null,
     checkOutButton: null,
+    customer: null,
     initCheckOutController: function () {
         CheckOutController.inputEmail = document.getElementById("inputEmail");
         CheckOutController.inputFirstName = document.getElementById("inputFirstName");
@@ -20,13 +22,27 @@ export let CheckOutController = {
         CheckOutController.checkOutButton.addEventListener('click', CheckOutController.startCheckOut);
     },
     startCheckOut: function () {
-        validateInputFields();
+        if (validateInputFields()) {
+            CheckOutController.customer = new Customer(
+                CheckOutController.inputEmail.value,
+                CheckOutController.inputFirstName.value,
+                CheckOutController.inputLastName.value,
+                CheckOutController.inputAddress1.value,
+                CheckOutController.inputAddress2.value,
+                CheckOutController.inputCity.value,
+                CheckOutController.inputZipCode.value);
+        }
     }
+
 }
 
 function validateInputFields() {
-    validateEmailInputField();
-    validateFirstNameInputField();
+    return validateEmailInputField() &&
+        validateFirstNameInputField() &&
+        validateLastNameInputField() &&
+        validateAddress1InputField() &&
+        validateCityInputField() &&
+        validateZipCodeInputField();
 }
 
 function validateEmailInputField() {
