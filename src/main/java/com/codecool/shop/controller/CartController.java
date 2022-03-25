@@ -14,8 +14,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.codecool.shop.dao.BundleDao;
 import com.codecool.shop.dao.ProductDao;
+import com.codecool.shop.dao.implementation.BundleDaoMem;
 import com.codecool.shop.dao.implementation.ProductDaoMem;
+import com.codecool.shop.model.Bundle;
 import com.codecool.shop.model.Cart;
 import com.codecool.shop.model.CartItem;
 import com.codecool.shop.model.Product;
@@ -38,6 +41,7 @@ public class CartController extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ProductDao productDataStore = ProductDaoMem.getInstance();
+        BundleDao bundleDaoMem = BundleDaoMem.getInstance();
 
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
@@ -57,16 +61,27 @@ public class CartController extends HttpServlet {
 
         for (String key : reqCart.keySet()) {
             Product product = productDataStore.find(Integer.parseInt(key));
-            if (product == null) {
+            Bundle bundle = bundleDaoMem.find(Integer.parseInt(key));
+            if (product == null && bundle == null) {
                 throw new ServletException("Invalid product id");
             }
-            cartItems.add(new CartItem(
-                    product.getId(),
-                    product.getName(),
-                    product.getSupplier().getName(),
-                    reqCart.get(key),
-                    product.getDefaultPrice()
-                    ));
+            else if (bundle != null) {
+                cartItems.add(new CartItem(
+                        40,
+                        bundle.getName(),
+                        "",
+                        reqCart.get(key),
+                        bundle.getDefaultPrice()
+                ));
+            } else {
+                cartItems.add(new CartItem(
+                        product.getId(),
+                        product.getName(),
+                        product.getSupplier().getName(),
+                        reqCart.get(key),
+                        product.getDefaultPrice()
+                ));
+            }
         }
 
         Cart cart = new Cart(cartItems);
