@@ -133,7 +133,7 @@
 
                         <div class="d-flex flex-row flex-wrap mr-5 ml-5 pl-5 pr-5">
                             <h5 class="card-text text-light mt-auto mb-auto" th:text="${bundle.description}"></h5>
-                            <a class="btn btn-dark btn-lg text-light mr-0 ml-auto mt-auto mb-auto">Add to Cart</a>
+                            <a class="btn btn-dark btn-lg text-light mr-0 ml-auto mt-auto mb-auto cart-button" th:attr="data-product-id=${bundle.id}">Add to Cart</a>
                         </div>
 
                     </div>
