@@ -29,37 +29,37 @@ public class Initializer implements ServletContextListener {
         BundleDao bundleDataStore = BundleDaoMem.getInstance();
 
         //setting up a new supplier
-        Supplier lowie = new Supplier("LoW Interactive Entertainment", "We don't actually know what we supposed to do.");
+        Supplier lowie = new Supplier("LoW Interactive Entertainment");
         supplierDataStore.add(lowie);
-        Supplier coolSticks = new Supplier("CoolSticks Co.", "World's #1 supplier of sticks.");
+        Supplier coolSticks = new Supplier("CoolSticks Co.");
         supplierDataStore.add(coolSticks);
-        Supplier funnyHats = new Supplier("Funny Hat Store", "Hats in all shapes and sizes.");
+        Supplier funnyHats = new Supplier("Funny Hat Store");
         supplierDataStore.add(funnyHats);
-        Supplier epicRides = new Supplier("Epic Rides Inc.", "In occasions when you gotta go fast, boi!");
+        Supplier epicRides = new Supplier("Epic Rides Inc.");
         supplierDataStore.add(epicRides);
-        Supplier titleTech = new Supplier("Title Tech Corps.", "Supplying titles with cutting-edge technology.");
+        Supplier titleTech = new Supplier("Title Tech Corps.");
         supplierDataStore.add(titleTech);
-        Supplier buffBros = new Supplier("Buff Bros.", "You need buff, you get buff!");
+        Supplier buffBros = new Supplier("Buff Bros.");
         supplierDataStore.add(buffBros);
-        Supplier ammuNation = new Supplier("Ammu-Nation", "Protecting your rights!");
+        Supplier ammuNation = new Supplier("Ammu-Nation");
         supplierDataStore.add(ammuNation);
-        Supplier hacksmith = new Supplier("Hacksmith Industries", "They actually made a lightsaber IRL!");
+        Supplier hacksmith = new Supplier("Hacksmith Industries");
         supplierDataStore.add(hacksmith);
-        Supplier pandora = new Supplier("Pandora", "That's the jewellery store.");
+        Supplier pandora = new Supplier("Pandora");
         supplierDataStore.add(pandora);
-        Supplier ea = new Supplier("Electronic Arts", "Your money and your life!");
+        Supplier ea = new Supplier("Electronic Arts");
         supplierDataStore.add(ea);
 
         //setting up a new product category
-        ProductCategory games = new ProductCategory("Games", "Software", "The main feature of our web shop.");
+        ProductCategory games = new ProductCategory("Games", "Software");
         productCategoryDataStore.add(games);
-        ProductCategory items = new ProductCategory("Items", "In-game", "All the equippable in-game stuff.");
+        ProductCategory items = new ProductCategory("Items", "In-game");
         productCategoryDataStore.add(items);
-        ProductCategory mounts = new ProductCategory("Mounts", "In-game", "The best steads money can buy.");
+        ProductCategory mounts = new ProductCategory("Mounts", "In-game");
         productCategoryDataStore.add(mounts);
-        ProductCategory titles = new ProductCategory("Titles", "In-game", "Show your superiority by attaching one of these neat titles to your name.");
+        ProductCategory titles = new ProductCategory("Titles", "In-game");
         productCategoryDataStore.add(titles);
-        ProductCategory buffs = new ProductCategory("Buffs", "In-game", "Why waste your time getting gud, when you can just buy a buff instead?");
+        ProductCategory buffs = new ProductCategory("Buffs", "In-game");
         productCategoryDataStore.add(buffs);
 
         //setting up products and printing it
