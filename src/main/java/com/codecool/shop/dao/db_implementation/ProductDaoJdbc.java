@@ -9,6 +9,7 @@ import com.codecool.shop.model.Supplier;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -33,7 +34,20 @@ public class ProductDaoJdbc implements ProductDao {
 
     @Override
     public Product find(int id) {
-        return null;
+        try (Connection conn = dataSource.getConnection()) {
+            String sql = "SELECT name, default_price, currency_string, description, category_id, supplier_id FROM products WHERE id = ?";
+            PreparedStatement statement = conn.prepareStatement(sql);
+            statement.setInt(1, id + 1);
+            ResultSet resultSet = statement.executeQuery();
+            if(!resultSet.next()) return null;
+            ProductCategory category = categoryDao.find(resultSet.getInt(5));
+            Supplier supplier = supplierDao.find(resultSet.getInt(6));
+            Product product = new Product(resultSet.getString(1), resultSet.getBigDecimal(2), resultSet.getString(3), resultSet.getString(4), category, supplier);
+            product.setId(id);
+            return product;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override

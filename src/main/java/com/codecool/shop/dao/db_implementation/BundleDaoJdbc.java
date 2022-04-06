@@ -9,6 +9,7 @@ import com.codecool.shop.model.Supplier;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -31,7 +32,22 @@ public class BundleDaoJdbc implements BundleDao {
 
     @Override
     public Bundle find(int id) {
-        return null;
+        try (Connection conn = dataSource.getConnection()) {
+            String sql = "SELECT name, description, STRING_AGG(CAST(pb.product_id AS varchar), ' ') FROM bundles JOIN products_bundles pb on bundles.id = pb.bundle_id WHERE bundles.id = ? GROUP BY bundles.id, name, description";
+            PreparedStatement statement = conn.prepareStatement(sql);
+            statement.setInt(1, id + 1);
+            ResultSet resultSet = statement.executeQuery();
+            if(!resultSet.next()) return null;
+            List<Product> productList = new ArrayList<>();
+            String productIdString = resultSet.getString(3);
+            String[] productIDs = productIdString.split(" ", 3);
+            for(String productID : productIDs) { productList.add(productDao.find(Integer.parseInt(productID))); }
+            Bundle bundle = new Bundle(resultSet.getString(1), resultSet.getString(2), productList);
+            bundle.setId(id);
+            return bundle;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
