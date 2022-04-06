@@ -3,9 +3,17 @@ package com.codecool.shop.dao.db_implementation;
 import com.codecool.shop.dao.ProductCategoryDao;
 import com.codecool.shop.model.ProductCategory;
 
+import javax.sql.DataSource;
 import java.util.List;
 
 public class ProductCategoryDaoJdbc implements ProductCategoryDao {
+
+    private DataSource dataSource;
+
+    public ProductCategoryDaoJdbc(DataSource dataSource) {
+        this.dataSource = dataSource;
+    }
+
     @Override
     public void add(ProductCategory category) {
 
