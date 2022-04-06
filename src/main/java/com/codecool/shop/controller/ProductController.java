@@ -4,6 +4,7 @@ import com.codecool.shop.dao.BundleDao;
 import com.codecool.shop.dao.ProductCategoryDao;
 import com.codecool.shop.dao.ProductDao;
 import com.codecool.shop.dao.SupplierDao;
+import com.codecool.shop.dao.db_implementation.ShopDatabaseManager;
 import com.codecool.shop.dao.implementation.BundleDaoMem;
 import com.codecool.shop.dao.implementation.ProductCategoryDaoMem;
 import com.codecool.shop.dao.implementation.ProductDaoMem;
@@ -19,6 +20,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,11 +29,24 @@ public class ProductController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ProductDao productDataStore = ProductDaoMem.getInstance();
-        ProductCategoryDao productCategoryDataStore = ProductCategoryDaoMem.getInstance();
+        ShopDatabaseManager dbManager = new ShopDatabaseManager();
+        try {
+            dbManager.setup();
+        } catch (SQLException ex) {
+            System.out.println("Cannot connect to database.");
+        }
+
+//        ProductDao productDataStore = ProductDaoMem.getInstance();
+//        ProductCategoryDao productCategoryDataStore = ProductCategoryDaoMem.getInstance();
+//        ProductService productService = new ProductService(productDataStore,productCategoryDataStore);
+//        BundleDao bundleDao = BundleDaoMem.getInstance();
+//        SupplierDao supplierDao = SupplierDaoMem.getInstance();
+
+        ProductDao productDataStore = dbManager.getProductDao();
+        ProductCategoryDao productCategoryDataStore = dbManager.getCategoryDao();
         ProductService productService = new ProductService(productDataStore,productCategoryDataStore);
-        BundleDao bundleDao = BundleDaoMem.getInstance();
-        SupplierDao supplierDao = SupplierDaoMem.getInstance();
+        BundleDao bundleDao = dbManager.getBundleDao();
+        SupplierDao supplierDao = dbManager.getSupplierDao();
 
         TemplateEngine engine = TemplateEngineUtil.getTemplateEngine(req.getServletContext());
         WebContext context = new WebContext(req, resp, req.getServletContext());

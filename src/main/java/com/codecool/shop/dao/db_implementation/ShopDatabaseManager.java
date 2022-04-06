@@ -29,6 +29,22 @@ public class ShopDatabaseManager {
         bundleDao = new BundleDaoJdbc(dataSource, productDao);
     }
 
+    public ProductDao getProductDao() {
+        return productDao;
+    }
+
+    public SupplierDao getSupplierDao() {
+        return supplierDao;
+    }
+
+    public ProductCategoryDao getCategoryDao() {
+        return categoryDao;
+    }
+
+    public BundleDao getBundleDao() {
+        return bundleDao;
+    }
+
     private Properties initProperties() throws IOException {
         String rootPath = Objects.requireNonNull(Thread.currentThread().getContextClassLoader().getResource("")).getPath();
         String appConfigPath = rootPath + "connection.properties";
