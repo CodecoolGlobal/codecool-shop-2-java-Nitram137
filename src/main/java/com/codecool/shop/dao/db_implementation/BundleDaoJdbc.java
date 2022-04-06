@@ -35,7 +35,7 @@ public class BundleDaoJdbc implements BundleDao {
         try (Connection conn = dataSource.getConnection()) {
             String sql = "SELECT name, description, STRING_AGG(CAST(pb.product_id AS varchar), ' ') FROM bundles JOIN products_bundles pb on bundles.id = pb.bundle_id WHERE bundles.id = ? GROUP BY bundles.id, name, description";
             PreparedStatement statement = conn.prepareStatement(sql);
-            statement.setInt(1, id + 1);
+            statement.setInt(1, id);
             ResultSet resultSet = statement.executeQuery();
             if(!resultSet.next()) return null;
             List<Product> productList = new ArrayList<>();

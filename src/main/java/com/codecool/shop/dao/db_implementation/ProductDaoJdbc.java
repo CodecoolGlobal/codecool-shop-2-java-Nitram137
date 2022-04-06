@@ -37,7 +37,7 @@ public class ProductDaoJdbc implements ProductDao {
         try (Connection conn = dataSource.getConnection()) {
             String sql = "SELECT name, default_price, currency_string, description, category_id, supplier_id FROM products WHERE id = ?";
             PreparedStatement statement = conn.prepareStatement(sql);
-            statement.setInt(1, id + 1);
+            statement.setInt(1, id);
             ResultSet resultSet = statement.executeQuery();
             if(!resultSet.next()) return null;
             ProductCategory category = categoryDao.find(resultSet.getInt(5));
@@ -65,7 +65,7 @@ public class ProductDaoJdbc implements ProductDao {
                 ProductCategory category = categoryDao.find(resultSet.getInt(6));
                 Supplier supplier = supplierDao.find(resultSet.getInt(7));
                 Product product = new Product(resultSet.getString(2), resultSet.getBigDecimal(3), resultSet.getString(4), resultSet.getString(5), category, supplier);
-                product.setId(resultSet.getInt(1) - 1);
+                product.setId(resultSet.getInt(1));
                 productList.add(product);
             }
             return productList;

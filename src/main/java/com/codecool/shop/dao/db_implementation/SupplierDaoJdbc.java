@@ -29,7 +29,7 @@ public class SupplierDaoJdbc implements SupplierDao {
         try (Connection conn = dataSource.getConnection()) {
             String sql = "SELECT name FROM suppliers WHERE id = ?";
             PreparedStatement statement = conn.prepareStatement(sql);
-            statement.setInt(1, id + 1);
+            statement.setInt(1, id);
             ResultSet resultSet = statement.executeQuery();
             if(!resultSet.next()) return null;
             Supplier supplier = new Supplier(resultSet.getString(1));

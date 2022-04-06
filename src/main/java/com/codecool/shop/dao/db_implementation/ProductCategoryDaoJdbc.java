@@ -30,7 +30,7 @@ public class ProductCategoryDaoJdbc implements ProductCategoryDao {
         try (Connection conn = dataSource.getConnection()) {
             String sql = "SELECT name, department FROM categories WHERE id = ?";
             PreparedStatement statement = conn.prepareStatement(sql);
-            statement.setInt(1, id + 1);
+            statement.setInt(1, id);
             ResultSet resultSet = statement.executeQuery();
             if(!resultSet.next()) return null;
             ProductCategory category = new ProductCategory(resultSet.getString(1), resultSet.getString(2));
