@@ -55,7 +55,10 @@ function cardPayment() {
 }
 
 function payPalPayment() {
-
+    if (validatePaypalPassword() && validatePaypalEmail())
+    {
+        $('#paymentModal').modal('hide');
+    }
 }
 
 function validateCardHolderName() {
