@@ -67,7 +67,7 @@ public class BundleDaoJdbc implements BundleDao {
                 String[] productIDs = productIdString.split(" ", 3);
                 for(String productID : productIDs) { productList.add(productDao.find(Integer.parseInt(productID))); }
                 Bundle bundle = new Bundle(resultSet.getString(2), resultSet.getString(3), productList);
-                bundle.setId(resultSet.getInt(1) - 1);
+                bundle.setId(resultSet.getInt(1));
                 bundleList.add(bundle);
             }
             return bundleList;
