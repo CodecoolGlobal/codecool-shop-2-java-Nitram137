@@ -20,6 +20,7 @@ public class ShopDatabaseManager {
     private SupplierDao supplierDao;
     private ProductCategoryDao categoryDao;
     private BundleDao bundleDao;
+    private Properties properties;
 
     private ShopDatabaseManager() {
     }
@@ -32,7 +33,7 @@ public class ShopDatabaseManager {
     }
 
     public void setup() throws SQLException, IOException {
-        Properties properties = initProperties();
+        properties = initProperties();
         DataSource dataSource = connect(properties);
         supplierDao = new SupplierDaoJdbc(dataSource);
         categoryDao = new ProductCategoryDaoJdbc(dataSource);
@@ -54,6 +55,10 @@ public class ShopDatabaseManager {
 
     public BundleDao getBundleDao() {
         return bundleDao;
+    }
+
+    public Properties getProperties() {
+        return properties;
     }
 
     private Properties initProperties() throws IOException {
