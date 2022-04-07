@@ -15,10 +15,21 @@ import org.postgresql.ds.PGSimpleDataSource;
 
 public class ShopDatabaseManager {
 
+    private static ShopDatabaseManager dbManager = null;
     private ProductDao productDao;
     private SupplierDao supplierDao;
     private ProductCategoryDao categoryDao;
     private BundleDao bundleDao;
+
+    private ShopDatabaseManager() {
+    }
+
+    public static ShopDatabaseManager getInstance() {
+        if(dbManager == null) {
+            dbManager = new ShopDatabaseManager();
+        }
+        return dbManager;
+    }
 
     public void setup() throws SQLException, IOException {
         Properties properties = initProperties();

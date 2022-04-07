@@ -29,7 +29,7 @@ public class ProductController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ShopDatabaseManager dbManager = new ShopDatabaseManager();
+        ShopDatabaseManager dbManager = ShopDatabaseManager.getInstance();
         try {
             dbManager.setup();
         } catch (SQLException ex) {
