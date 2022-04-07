@@ -22,6 +22,17 @@ public class Bundle extends BaseModel {
         defaultPrice = defaultPrice.multiply(BigDecimal.valueOf(0.9));
     }
 
+    public Bundle(String name, String description, List<Product> products) {
+        super(name, description);
+        this.products.addAll(products);
+        defaultPrice = new BigDecimal(0);
+        defaultCurrency = products.get(0).getDefaultCurrency();
+        for(Product product : this.products) {
+            defaultPrice = defaultPrice.add(product.getDefaultPrice());
+        }
+        defaultPrice = defaultPrice.multiply(BigDecimal.valueOf(0.9));
+    }
+
     public List<Product> getAllProducts() {
         return products;
     }
