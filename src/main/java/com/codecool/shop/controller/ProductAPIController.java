@@ -29,8 +29,6 @@ public class ProductAPIController extends HttpServlet {
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
 
-        ProductDao productDataStore = ProductDaoMem.getInstance();
-
         List<Product> products = productDataStore.getAll();
 
         List<ProductJSON> productJSONS = products.stream().map(product -> new ProductJSON(
