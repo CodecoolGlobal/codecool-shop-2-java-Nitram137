@@ -54,7 +54,7 @@ public class ProductCategoryDaoJdbc implements ProductCategoryDao {
             List<ProductCategory> categoryList = new ArrayList<>();
             while(resultSet.next()) {
                 ProductCategory category = new ProductCategory(resultSet.getString(2), resultSet.getString(3));
-                category.setId(resultSet.getInt(1) - 1);
+                category.setId(resultSet.getInt(1));
                 categoryList.add(category);
             }
             return categoryList;

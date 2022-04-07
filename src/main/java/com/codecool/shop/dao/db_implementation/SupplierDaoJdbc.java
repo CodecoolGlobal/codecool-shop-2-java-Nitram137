@@ -53,7 +53,7 @@ public class SupplierDaoJdbc implements SupplierDao {
             List<Supplier> supplierList = new ArrayList<>();
             while(resultSet.next()) {
                 Supplier supplier = new Supplier(resultSet.getString(2));
-                supplier.setId(resultSet.getInt(1) - 1);
+                supplier.setId(resultSet.getInt(1));
                 supplierList.add(supplier);
             }
             return supplierList;
