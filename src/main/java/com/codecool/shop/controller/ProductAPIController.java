@@ -8,7 +8,6 @@ import com.google.gson.Gson;
 
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,8 +16,13 @@ import java.io.PrintWriter;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@WebServlet(name = "ProductAPI", urlPatterns = "/api/product")
 public class ProductAPIController extends HttpServlet {
+
+    private final ProductDao productDataStore;
+
+    public ProductAPIController(ProductDao productDataStore) {
+        this.productDataStore = productDataStore;
+    }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

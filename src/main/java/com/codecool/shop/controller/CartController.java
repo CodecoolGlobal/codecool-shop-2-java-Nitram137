@@ -1,7 +1,6 @@
 package com.codecool.shop.controller;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,8 +15,6 @@ import java.util.Map;
 
 import com.codecool.shop.dao.BundleDao;
 import com.codecool.shop.dao.ProductDao;
-import com.codecool.shop.dao.implementation.BundleDaoMem;
-import com.codecool.shop.dao.implementation.ProductDaoMem;
 import com.codecool.shop.model.Bundle;
 import com.codecool.shop.model.Cart;
 import com.codecool.shop.model.CartItem;
@@ -26,8 +23,15 @@ import com.codecool.shop.model.Product;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 
-@WebServlet(name = "CartController", urlPatterns = "/api/cart", loadOnStartup = 2)
 public class CartController extends HttpServlet {
+
+    private final ProductDao productDataStore;
+    private final BundleDao bundleDaoMem;
+
+    public CartController(ProductDao productDataStore, BundleDao bundleDaoMem) {
+        this.productDataStore = productDataStore;
+        this.bundleDaoMem = bundleDaoMem;
+    }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -40,8 +44,6 @@ public class CartController extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        ProductDao productDataStore = ProductDaoMem.getInstance();
-        BundleDao bundleDaoMem = BundleDaoMem.getInstance();
 
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
