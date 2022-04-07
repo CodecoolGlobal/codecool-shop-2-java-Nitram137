@@ -1,11 +1,13 @@
 import {CartController} from "./controller/CartController.js";
 import {CheckOutController} from "./controller/CheckOutController.js";
+import {PaymentController} from "./controller/PaymentController.js";
 import {ProductController} from "./controller/ProductController.js";
 
 function init() {
     setEventListenersToFilterButtons();
     CartController.initCart();
     CheckOutController.initCheckOutController();
+    PaymentController.initPayment();
     ProductController.initProducts();
 }
 
