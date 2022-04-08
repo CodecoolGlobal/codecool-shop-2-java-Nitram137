@@ -69,7 +69,7 @@ public class CartController extends HttpServlet {
             }
             else if (bundle != null) {
                 cartItems.add(new CartItem(
-                        -1,
+                        bundle.getId(),
                         bundle.getName(),
                         "",
                         reqCart.get(key),

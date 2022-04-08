@@ -26,7 +26,7 @@ public class BundleDaoMem implements BundleDao {
 
     @Override
     public void add(Bundle bundle) {
-        bundle.setId(data.size() + 1);
+        bundle.setId(data.size() + 1 + 30);
         data.add(bundle);
     }
 

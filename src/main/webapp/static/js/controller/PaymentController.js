@@ -51,6 +51,7 @@ function cardPayment() {
         validateExpireDate() &&
         validateCVV()) {
         $('#paymentModal').modal('hide');
+        alert("Thank you for your order!");
     }
 }
 
@@ -58,6 +59,7 @@ function payPalPayment() {
     if (validatePaypalPassword() && validatePaypalEmail())
     {
         $('#paymentModal').modal('hide');
+        alert("Thank you for your order!");
     }
 }
 

@@ -89,19 +89,19 @@ INSERT INTO public.categories (name, department) VALUES
     ('Titles', 'In-game'),
     ('Buffs', 'In-game');
 
-INSERT INTO public.bundles (name, description) VALUES
-    ('Master Yoda Kit', 'Everything you need to become a true jedi.'),
-    ('Discord Moderator Set', 'This combo makes you irresistible to any human being.'),
-    ('Tarnished Package', 'Straight from the Lands Beyond.');
+INSERT INTO public.bundles (id, name, description) VALUES
+    (31, 'Master Yoda Kit', 'Everything you need to become a true jedi.'),
+    (32, 'Discord Moderator Set', 'This combo makes you irresistible to any human being.'),
+    (33, 'Tarnished Package', 'Straight from the Lands Beyond.');
 
 INSERT INTO public.products_bundles (bundle_id, product_id) VALUES
-    (1, 7),
-    (1, 14),
-    (1, 26),
-    (2, 10),
-    (2, 27),
-    (3, 5),
-    (3, 29);
+    (31, 7),
+    (31, 14),
+    (31, 26),
+    (32, 10),
+    (32, 27),
+    (33, 5),
+    (33, 29);
 
 ALTER TABLE ONLY public.products
     ADD CONSTRAINT fk_supplier_id FOREIGN KEY (supplier_id) REFERENCES public.suppliers(id),

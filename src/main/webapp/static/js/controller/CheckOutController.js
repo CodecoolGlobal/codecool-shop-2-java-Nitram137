@@ -8,6 +8,7 @@ export let CheckOutController = {
     inputAddress2: null,
     inputCity: null,
     inputZipCode: null,
+
     checkOutButton: null,
     customer: null,
     initCheckOutController: function () {

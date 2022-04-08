@@ -90,7 +90,7 @@ function createProductCardInCart(item) {
     const cardDiv = CartController.cartItem.content.cloneNode(true);
 
     const image = cardDiv.querySelector(".product-image");
-    if(item.id !== -1) {
+    if(item.supplier !== "") {
         image.setAttribute("src", `/static/img/product_${item.id}.png`);
     }
 
@@ -116,6 +116,7 @@ function createProductCardInCart(item) {
 
     const decreaseButton = cardDiv.querySelector(".decrease-quantity");
     decreaseButton.setAttribute("data-product-id", item.id);
+
     decreaseButton.addEventListener('click', decreaseProductQuantity);
 
     CartController.productList.appendChild(cardDiv);
